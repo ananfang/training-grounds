@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Give your game characters a little direction. Make 3D motion guides for AI sprite animation, right in your browser."
+    />
+    <title>Training Grounds · A little practice before the adventure</title>
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./"><span class="mark">⚑</span> Training Grounds</a
+      ><a
+        href="https://github.com/ananfang/training-grounds"
+        target="_blank"
+        rel="noopener"
+        >Source on GitHub ↗</a
+      >
+    </header>
+    <main>
+      <div class="intro">
+        <p class="eyebrow">A SMALL TOOL FOR YOUR NEXT ADVENTURE</p>
+        <h1>Every hero starts<br />with a little practice.</h1>
+        <p>
+          I wanted to make a game. Getting a character to walk was… a whole side
+          quest.<br />These motion guides helped. Maybe they’ll help you, too.
+        </p>
+      </div>
+      <div class="workspace">
+        <aside>
+          <p class="eyebrow">01 / SET THE SCENE</p>
+          <h2>What’s the move?</h2>
+          <label
+            >Motion<select id="motion">
+              <option value="walk">Walk in place</option>
+              <option value="idle">Stand & breathe</option>
+            </select></label
+          ><label
+            >Facing<select id="direction">
+              <option value="right">Right →</option>
+              <option value="left">Left ←</option>
+              <option value="down">Front ↓</option>
+              <option value="up">Back ↑</option>
+            </select></label
+          ><label
+            >Camera elevation <output id="angle">27.1°</output
+            ><input
+              id="elevation"
+              type="range"
+              min="0"
+              max="70"
+              step="0.1"
+              value="27.1" /></label
+          ><label
+            >Preview speed<select id="speed">
+              <option value="1">Original timing</option>
+              <option value="0.5">Half speed</option>
+            </select></label
+          >
+          <details>
+            <summary>Bring your own animation</summary>
+            <p class="hint">
+              A self-contained animated GLB, up to 30 MB. We use its own model
+              and rig, without retargeting.
+            </p>
+            <label class="file-label"
+              >Open a GLB<input id="glb" type="file" accept=".glb" /></label
+            ><label id="clip-label" hidden
+              >Animation clip<select id="clip"></select
+            ></label>
+            <button id="builtin" type="button">Use built-in mannequin</button><p id="import-status" class="hint" role="status"></p>
+          </details>
+          <p class="hint">
+            Side views start at 27.1°. Front and back use 40°. These are the
+            angles that worked for our map characters.
+          </p>
+        </aside>
+        <section class="stage">
+          <div class="stage-top">
+            <span class="pill">LIVE MOTION GUIDE</span
+            ><span class="subtle">8 frames · one complete loop</span>
+          </div>
+          <div id="cards"></div>
+          <div class="playback">
+            <button id="pause">Pause</button
+            ><button id="restart" aria-label="Restart animation">Restart</button
+            ><button id="step">Next frame →</button>
+          </div>
+          <p id="status" role="status">Loading the mannequin…</p>
+        </section>
+        <aside class="export">
+          <p class="eyebrow">02 / TAKE IT WITH YOU</p>
+          <h2>Ready for a costume.</h2>
+          <p>
+            Download the guide. Add your character’s still image. Let your image
+            generator dress each pose.
+          </p>
+          <button class="primary" id="export">Download sprite sheet ↗</button
+          ><button id="copy">Copy image prompt</button
+          ><button class="quiet" id="metadata">Download timing JSON</button>
+          <p class="hint">
+            PNG · 1536 × 512 · transparent<br />One row, eight frames. Source
+            timing.
+          </p>
+          <p id="notice" role="status" aria-live="polite"></p>
+          <textarea
+            id="prompt"
+            aria-label="Image generation prompt"
+            hidden
+            readonly
+          ></textarea>
+          <div class="note">
+            No account. No generation credits here.<br />Use the guide with your
+            own image tool.
+          </div>
+        </aside>
+      </div>
+      <section id="sheet-result" hidden>
+        <p class="eyebrow">YOUR EIGHT POSES</p>
+        <img id="sheet-preview" alt="Exported eight-frame motion guide" />
+      </section>
+      <section class="story">
+        <div>
+          <p class="eyebrow">A LITTLE PROOF</p>
+          <h2>Meet Hua.<br />She can finally walk.</h2>
+          <p>
+            This is a result from our actual game project. Same idea: a motion
+            guide, a simple character still, and a frame-conversion prompt.
+          </p>
+          <p>
+            AI can still wander off. Check the feet, silhouette, and loop at the
+            size you’ll use in your game.
+          </p>
+        </div>
+        <div class="example">
+          <canvas
+            id="example"
+            width="320"
+            height="450"
+            aria-label="Hua walking animation example"
+          ></canvas
+          ><span>Generated example · 8 frames · 1.33s</span>
+        </div>
+        <div class="how">
+          <p class="eyebrow">YOUR TURN</p>
+          <ol>
+            <li>Export a guide you like.</li>
+            <li>Attach it as image 1, and your character still as image 2.</li>
+            <li>Paste the prompt into your image generator.</li>
+            <li>Slice the result and play it at the exported timing.</li>
+          </ol>
+          <p class="hint">
+            Keep your original character still as the appearance reference. A
+            previous animation can carry its mistakes into the next one.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <span>Made while building Bloom Beyond the Mirror.</span
+      ><span
+        >Built with Codex · Three.js ·
+        <a href="https://quaternius.com/packs/universalanimationlibrary.html"
+          >Quaternius motion</a
+        >
+        · ImageGen example</span
+      >
+    </footer>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
