@@ -95,18 +95,32 @@
         </section>
         <aside class="export">
           <p class="eyebrow">02 / TAKE IT WITH YOU</p>
-          <h2>Ready for a costume.</h2>
-          <p>
-            Download the guide. Add your character’s still image. Let your image
-            generator dress each pose.
-          </p>
-          <button class="primary" id="export">Download sprite sheet ↗</button
-          ><button id="copy">Copy image prompt</button
-          ><button class="quiet" id="metadata">Download timing JSON</button>
-          <p class="hint">
-            PNG · 1536 × 512 · transparent<br />One row, eight frames. Source
-            timing.
-          </p>
+          <div class="export-heading">
+            <h2>Pack a little.<br />Make a character move.</h2>
+            <img src="/assets/adventure-bag.png" width="72" height="62" alt="" aria-hidden="true" />
+          </div>
+          <ol class="export-steps">
+            <li>
+              <h3>Take the poses.</h3>
+              <p>Like the move? Download these eight poses as one sprite sheet.</p>
+              <button class="primary" id="export">Download sprite sheet ↗</button>
+            </li>
+            <li>
+              <h3>Bring your character.</h3>
+              <p>Open your image generator. Attach the guide and your character’s still image. Either order is fine.</p>
+            </li>
+            <li>
+              <h3>Give it a little direction.</h3>
+              <p>Copy this prompt, paste it there, and generate. The poses are ready. Now for the costume.</p>
+              <button id="copy">Copy image prompt</button>
+            </li>
+          </ol>
+          <details class="timing-help">
+            <summary>Got your sheet? Make it move.</summary>
+            <p>Slice the result into eight frames in your game or animation tool. Play them at the timing in this file. Check the feet and loop—AI still likes a little detour.</p>
+            <button class="quiet" id="metadata">Download timing JSON</button>
+          </details>
+          <p class="hint">Guide: transparent PNG · 1536 × 512<br />One row, eight poses. Original animation timing.</p>
           <p id="notice" role="status" aria-live="polite"></p>
           <textarea
             id="prompt"

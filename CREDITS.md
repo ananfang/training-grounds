@@ -10,3 +10,5 @@ The built-in image tool did not expose its underlying model version. We don't la
 - **Training post decoration:** generated with the built-in ImageGen tool. Included under the MIT license.
 
 - **GitHub logo icon:** Phosphor Icons, MIT. Original license: `public/assets/PHOSPHOR-LICENSE.txt`. Source: https://github.com/phosphor-icons/core.
+
+- **Adventure bag decoration:** generated with the built-in ImageGen tool, included under MIT.

@@ -398,3 +398,26 @@ input[type="file"] {
 
 .source-link { display: inline-flex; align-items: center; gap: 7px; }
 .source-link img { flex-shrink: 0; }
+
+.workspace { grid-template-columns: 240px minmax(280px, 1fr) 320px; }
+.export-heading { display: flex; align-items: center; gap: 12px; }
+.export-heading h2 { flex: 1; font-size: 23px; }
+.export-heading img { width: 64px; height: auto; flex-shrink: 0; }
+.export-steps { list-style: none; counter-reset: packing; padding: 0; margin: 20px 0; }
+.export-steps li { counter-increment: packing; position: relative; padding-left: 33px; margin: 0 0 25px; }
+.export-steps li::before { content: counter(packing); position: absolute; left: 0; top: 0; width: 23px; height: 23px; display: grid; place-items: center; background: #e8edda; border-radius: 50%; font-size: 12px; font-weight: 700; }
+.export-steps h3 { font-size: 16px; line-height: 1.5; margin: 0 0 5px; font-weight: 600; }
+.export .export-steps p, .export .timing-help p { font-size: 15px; line-height: 1.6; margin: 0 0 10px; }
+.export-steps button { font-size: 14px; }
+.timing-help summary { font-size: 14px; line-height: 1.5; }
+.timing-help p { margin-top: 12px !important; }
+@media (max-width: 1050px) { .workspace { grid-template-columns: 190px minmax(280px, 1fr); } .export { grid-column: 1/-1; border-top: 1px solid #dce0d4; } .export-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; } .export-heading { justify-content: space-between; } .export-heading h2 { flex: initial; } }
+@media (max-width: 600px) { .workspace { grid-template-columns: 1fr; } .export-steps { display: block; } }
+/* Give the walkthrough its own row so larger text never crowds the guide. */
+.workspace { grid-template-columns: 240px minmax(280px, 1fr); }
+.export { grid-column: 1 / -1; border-top: 1px solid #dce0d4; }
+.export-heading { justify-content: space-between; }
+.export-heading h2 { flex: initial; }
+.export-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+@media (max-width: 950px) { .workspace { grid-template-columns: 190px minmax(280px, 1fr); } }
+@media (max-width: 600px) { .workspace { grid-template-columns: 1fr; } .export-steps { display: block; } }
