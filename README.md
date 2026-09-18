@@ -34,6 +34,13 @@ npm run dev
 
 The guide establishes movement. The original still establishes appearance. Avoid feeding a previous generated animation back as the character reference.
 
+## Project files
+
+- `src/` and `index.html`: the app.
+- `public/`: site assets and license notices.
+- `launch/`: gallery images, source images, and the gallery script. Run `node launch/make-gallery.mjs` from the project root to rebuild them.
+- `docs/`: build and launch notes.
+
 ## Credits
 
 Built with Codex and Three.js. Walking joint samples come from Quaternius Universal Animation Library, under CC0. The simplified mannequin, shoe adaptation and planted breathing were built for our game workflow. Hua artwork was generated with ImageGen. See [credits and asset terms](CREDITS.md).

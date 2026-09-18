@@ -25,9 +25,10 @@ It helped my character finally walk. I hope it helps yours too.
 
 What movement would you want to try next?
 
-## Assets and final review
+## Launch materials
 
 - `launch/thumbnail.png`:240×240.
 - `launch/gallery-{1,2,3}.png`:1270×760; actual guide/example artwork with explanatory text.
 - Public app is the interactive demo. No hosted video prepared.
-- Check challenge enrollment and September18,2026 launch date in the final form. Draft is not a scheduled launch.
+- Product Hunt: https://www.producthunt.com/products/training-grounds
+- The user completed scheduling and received the challenge welcome email. These notes are the launch copy reference, not a live submission-status check.
