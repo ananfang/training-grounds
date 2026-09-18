@@ -9,3 +9,8 @@
 - Browser verified pause, frame stepping, PNG preview with eight distinct walking poses, and prompt copy. Breathing switches to3s/front40°.
 - GLB bonus implemented and tested with Quaternius UAL1: local import, clip selection, Walk_Loop playback at1.33s, fitted own model. Self-contained files only; no retargeting. Added return-to-mannequin control.
 - Publishing core site next; production checks and launch materials pending.
+- GitHub Pages deployment succeeded: https://ananfang.github.io/training-grounds/. Browser verified live motion and exported PNG header1536×512. Phone breakpoint390px has no horizontal overflow.
+- Product Hunt draft started with public URL and repository link. Actual form supports open-source projects and500-character description; media accepts optional YouTube/Loom. Name, tagline, description and maker story filled; thumbnail and three gallery images uploaded. Final submission remains for user review.
+- Product Hunt draft saved: https://www.producthunt.com/products/training-grounds?launch=training-grounds. Required checklist100% complete; not scheduled. Thumbnail, three gallery images, free pricing, maker, source link and Codex shoutout included. Optional video omitted.
+- Scheduling preview confirms September18 at12:01am PT /3:01pm Taiwan and a separate “Yes, join the GPT-6 Astra Challenge” radio option. Final confirmation is left for the user, as agreed.
+- Added favicon/social image and friendly load-failure message. Final build and deployment verification next.

@@ -7,7 +7,7 @@
       name="description"
       content="Give your game characters a little direction. Make 3D motion guides for AI sprite animation, right in your browser."
     />
-    <title>Training Grounds · A little practice before the adventure</title>
+    <link rel="icon" href="/icon.png"><meta property="og:title" content="Training Grounds"><meta property="og:description" content="Motion guides for AI game character animation."><meta property="og:image" content="https://ananfang.github.io/training-grounds/social.png"><meta property="og:url" content="https://ananfang.github.io/training-grounds/"><title>Training Grounds · A little practice before the adventure</title>
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
@@ -169,6 +169,12 @@
         · ImageGen example</span
       >
     </footer>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module">
+      import('/src/main.js').catch((error) => {
+        console.error(error);
+        document.querySelector('#status').textContent = 'The guide could not load. Please reload, or try a browser with WebGL enabled.';
+        document.querySelectorAll('.workspace button, .workspace select, .workspace input').forEach(el => el.disabled = true);
+      });
+    </script>
   </body>
 </html>
