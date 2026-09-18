@@ -382,3 +382,16 @@ input[type="file"] {
 [hidden] {
   display: none !important;
 }
+
+/* A small prop from the training grounds, outside the export canvas. */
+.intro { position: relative; padding-right: 220px; min-height: 200px; }
+.training-prop { position: absolute; right: 35px; bottom: -5px; width: 190px; height: auto; pointer-events: none; }
+@media (max-width: 950px) {
+  .intro { padding-right: 160px; }
+  .training-prop { width: 145px; right: 0; bottom: 5px; }
+}
+@media (max-width: 600px) {
+  .intro { padding-right: 0; min-height: 0; }
+  .training-prop { position: static; float: right; width: 75px; margin: 0 0 5px 8px; }
+  .intro h1 { clear: both; }
+}

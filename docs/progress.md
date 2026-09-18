@@ -16,3 +16,5 @@
 - Added favicon/social image and friendly load-failure message. Final build and deployment verification next.
 - Production checks covered left/right/front/back presets and source-duration switching. Fixed visible prompt refresh and hid stale sheet previews when settings change.
 - Core product delivered; GLB import included. Product Hunt final scheduling is the remaining user review step. No video hosting account was used.
+
+- Added a small pixel-art training post, wooden sword and grass beside the introduction. The motion guide and PNG exports stay clear.

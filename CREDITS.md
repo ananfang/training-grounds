@@ -6,3 +6,5 @@
 - **Hua example artwork:** generated with ImageGen for Bloom Beyond the Mirror. Included for demonstration; reserved for that game, not covered by the code’s MIT license. Bring your own character still for your game.
 
 The built-in image tool did not expose its underlying model version. We don't label the example with an unverified version.
+
+- **Training post decoration:** generated with the built-in ImageGen tool. Included under the MIT license.
