@@ -8,3 +8,5 @@
 The built-in image tool did not expose its underlying model version. We don't label the example with an unverified version.
 
 - **Training post decoration:** generated with the built-in ImageGen tool. Included under the MIT license.
+
+- **GitHub logo icon:** Phosphor Icons, MIT. Original license: `public/assets/PHOSPHOR-LICENSE.txt`. Source: https://github.com/phosphor-icons/core.

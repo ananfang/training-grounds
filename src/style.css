@@ -395,3 +395,6 @@ input[type="file"] {
   .training-prop { position: static; float: right; width: 75px; margin: 0 0 5px 8px; }
   .intro h1 { clear: both; }
 }
+
+.source-link { display: inline-flex; align-items: center; gap: 7px; }
+.source-link img { flex-shrink: 0; }
