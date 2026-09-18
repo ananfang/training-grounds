@@ -69,7 +69,7 @@ h2 {
 .intro {
   margin-bottom: 34px;
 }
-.intro > p:last-child {
+.intro > p:not(.eyebrow) {
   color: #747b6c;
   line-height: 1.6;
   font-size: 14px;
@@ -448,3 +448,6 @@ input[type="file"] {
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 :lang(ja) h1, :lang(zh-TW) h1 { letter-spacing: 0; line-height: 1.25; }
 @media(max-width:600px) { header { height: auto; min-height: 95px; flex-wrap: wrap; gap: 10px; padding-block: 14px; } .header-actions { gap: 12px; } .source-link { font-size: 11px; } }
+
+.product-hunt-badge { display: block; width: 250px; max-width: 100%; margin-top: 20px; }
+.product-hunt-badge img { display: block; width: 100%; height: auto; }
