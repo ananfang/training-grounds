@@ -441,3 +441,10 @@ input[type="file"] {
 .import-actions > .hint, .import-actions #clip-label { grid-column: 1 / -1; }
 .import-actions #builtin { min-height: 44px; }
 @media (max-width: 600px) { .workspace > .import-panel { grid-template-columns: 1fr; gap: 14px; padding: 22px 20px; } }
+
+.header-actions { display: flex; align-items: center; gap: 18px; }
+.language-picker { margin: 0; }
+.language-picker select { margin: 0; padding: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+:lang(ja) h1, :lang(zh-TW) h1 { letter-spacing: 0; line-height: 1.25; }
+@media(max-width:600px) { header { height: auto; min-height: 95px; flex-wrap: wrap; gap: 10px; padding-block: 14px; } .header-actions { gap: 12px; } .source-link { font-size: 11px; } }

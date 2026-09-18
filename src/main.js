@@ -570,7 +570,8 @@ document.querySelector("#glb").onchange = async (e) => {
     status.textContent =
       "Loaded locally. Your model stays in this browser. Facing assumes +Z is forward; use the direction control to turn it.";
   } catch (err) {
-    status.textContent = err.message || "Could not open this GLB.";
+    console.error(err);
+    status.textContent = ["Use a self-contained GLB with embedded textures.", "This model has no animation clips. Try an animated GLB."].includes(err.message) ? err.message : "Could not open this GLB.";
   }
   e.target.value = "";
 };

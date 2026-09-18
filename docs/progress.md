@@ -18,3 +18,4 @@
 - Core product delivered; GLB import included. Product Hunt final scheduling is the remaining user review step. No video hosting account was used.
 
 - Added a small pixel-art training post, wooden sword and grass beside the introduction. The motion guide and PNG exports stay clear.
+- Added English, Taiwanese Traditional Chinese and Japanese. Browser preferences choose the first supported language; English is the fallback. A saved choice wins. Switching keeps the current animation settings. Image prompts stay in English. Checked Chinese and Japanese in the browser, saved choice after reload, English prompt copy, and no overflow at 390px. Six language-matching checks passed.
