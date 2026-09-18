@@ -63,19 +63,19 @@
               <option value="0.5">Half speed</option>
             </select></label
           >
-          <details>
-            <summary>Bring your own animation</summary>
+          <section class="import-panel" aria-labelledby="import-title">
+            <h3 id="import-title">Bring your own animation</h3>
             <p class="hint">
-              A self-contained animated GLB, up to 30 MB. We use its own model
-              and rig, without retargeting.
+              Have an animated GLB? Open it here and try your own moves. Your file stays in your browser.
             </p>
             <label class="file-label"
-              >Open a GLB<input id="glb" type="file" accept=".glb" /></label
+              >Open a GLB ↗<input id="glb" type="file" accept=".glb" aria-label="Open an animated GLB file" /></label
             ><label id="clip-label" hidden
               >Animation clip<select id="clip"></select
             ></label>
             <button id="builtin" type="button">Use built-in mannequin</button><p id="import-status" class="hint" role="status"></p>
-          </details>
+            <p class="hint">Up to 30 MB. Include the model and animation in one GLB. We use its own rig.</p>
+          </section>
           <p class="hint">
             Side views start at 27.1°. Front and back use 40°. These are the
             angles that worked for our map characters.

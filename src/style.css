@@ -421,3 +421,13 @@ input[type="file"] {
 .export-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
 @media (max-width: 950px) { .workspace { grid-template-columns: 190px minmax(280px, 1fr); } }
 @media (max-width: 600px) { .workspace { grid-template-columns: 1fr; } .export-steps { display: block; } }
+
+.import-panel { grid-column: 1 / -1; background: #edf2dd; border: 1px solid #cdd8b4; border-radius: 10px; padding: 15px; margin-top: 20px; }
+.import-panel h3 { font-size: 16px; line-height: 1.35; margin: 0 0 8px; }
+.import-panel .hint { color: #5e6c50; margin: 8px 0; }
+.file-label { position: relative; display: block; text-align: center; background: #314a36; color: white; border-radius: 7px; padding: 13px 8px; cursor: pointer; font-size: 14px; margin: 14px 0; }
+.file-label:hover { background: #476443; }
+.file-label:focus-within { outline: 3px solid #7c9449; outline-offset: 3px; }
+.file-label input[type="file"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; margin: 0; }
+#import-status:empty { display: none; }
+.import-panel #builtin { width: 100%; font-size: 11px; }
