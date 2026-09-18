@@ -357,17 +357,15 @@ function draw(now) {
 requestAnimationFrame(draw);
 
 function configure() {
-  direction = document.querySelector("#direction").value;
+  const rotation = Number(document.querySelector("#rotation").value);
+  direction = ({0: "down", 90: "right", "-90": "left", 180: "up", "-180": "up"})[rotation] || "custom";
+  document.querySelector("#direction").value = direction;
   const elevation = Number(document.querySelector("#elevation").value);
   const angle = (elevation * Math.PI) / 180;
   cam.position.set(0, 0.9 + 8 * Math.sin(angle), 8 * Math.cos(angle));
   cam.lookAt(0, 0.9, 0);
-  clips[0].scene.rotation.y = {
-    right: Math.PI / 2,
-    left: -Math.PI / 2,
-    up: Math.PI,
-    down: 0,
-  }[direction];
+  clips[0].scene.rotation.y = rotation * Math.PI / 180;
+  document.querySelector("#rotation-angle").textContent = rotation + "°";
   clips[0].motion.duration = imported
     ? imported.clip.duration
     : motionSelect.value === "idle"
@@ -380,6 +378,7 @@ function configure() {
   document.querySelector("#notice").textContent = "";
 }
 document.querySelector("#direction").onchange = () => {
+  document.querySelector("#rotation").value = ({down: 0, right: 90, left: -90, up: 180})[document.querySelector("#direction").value];
   document.querySelector("#elevation").value = ["up", "down"].includes(
     document.querySelector("#direction").value,
   )
@@ -393,11 +392,13 @@ motionSelect.onchange = () => {
   }
   if (motionSelect.value === "idle") {
     document.querySelector("#direction").value = "down";
+    document.querySelector("#rotation").value = 0;
     document.querySelector("#elevation").value = 40;
   }
   configure();
 };
 document.querySelector("#elevation").oninput = configure;
+document.querySelector("#rotation").oninput = configure;
 function download(blob, name) {
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -419,6 +420,7 @@ function metadata() {
     cellHeight: 512,
     durationSeconds: clips[0].motion.duration,
     frameDurationMs: (clips[0].motion.duration * 1000) / 8,
+    modelRotationDegrees: Number(document.querySelector("#rotation").value),
     cameraElevation: Number(document.querySelector("#elevation").value),
     sampleTimes: Array.from(
       { length: 8 },
@@ -461,7 +463,7 @@ document.querySelector("#metadata").onclick = () =>
     "animation.json",
   );
 function prompt() {
-  return `Use the attached references by their content, regardless of attachment order: the sprite sheet showing eight motion poses is the motion guide; the single character still is the appearance reference. Convert every frame of the motion guide into the character shown in the appearance reference. Preserve the eight poses in their exact left-to-right order, the overall shape of each pose, limb angles, foot tilt, camera view, scale and placement. This is a ${direction}-facing ${imported ? imported.clip.name : motionSelect.value === "idle" ? "planted standing breathing" : "walking"} animation. Carefully follow each limb in each frame. ${imported ? "The guide shows an imported animated model. Use its pose geometry, not its existing costume or colors." : "Guide colors identify anatomical sides: right arm green, left arm magenta, right leg cyan, left leg orange; darker blocks are feet, gray parts are head and torso."} Completely cover every guide component with the character’s anatomy and clothing from the appearance reference. No guide colors, rods, joints, or construction marks may remain. Preserve character identity, outfit, colors and pixel-art style. Keep one horizontal row of eight frames, consistent character proportions and a transparent background. Do not add frames, captions or scenery. This sheet represents one ${clips[0].motion.duration.toFixed(3)}-second loop; do not repeat the first pose at the end.`;
+  return `Use the attached references by their content, regardless of attachment order: the sprite sheet showing eight motion poses is the motion guide; the single character still is the appearance reference. Convert every frame of the motion guide into the character shown in the appearance reference. Preserve the eight poses in their exact left-to-right order, the overall shape of each pose, limb angles, foot tilt, camera view, scale and placement. Match the viewing direction shown in the guide exactly. This is a ${imported ? imported.clip.name : motionSelect.value === "idle" ? "planted standing breathing" : "walking"} animation. Carefully follow each limb in each frame. ${imported ? "The guide shows an imported animated model. Use its pose geometry, not its existing costume or colors." : "Guide colors identify anatomical sides: right arm green, left arm magenta, right leg cyan, left leg orange; darker blocks are feet, gray parts are head and torso."} Completely cover every guide component with the character’s anatomy and clothing from the appearance reference. No guide colors, rods, joints, or construction marks may remain. Preserve character identity, outfit, colors and pixel-art style. Keep one horizontal row of eight frames, consistent character proportions and a transparent background. Do not add frames, captions or scenery. This sheet represents one ${clips[0].motion.duration.toFixed(3)}-second loop; do not repeat the first pose at the end.`;
 }
 document.querySelector("#copy").onclick = async () => {
   document.querySelector("#prompt").value = prompt();

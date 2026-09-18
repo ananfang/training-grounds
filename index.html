@@ -41,13 +41,14 @@
               <option value="idle">Stand & breathe</option>
             </select></label
           ><label
-            >Facing<select id="direction">
+            >Facing preset<select id="direction"><option value="custom" disabled>Custom angle</option>
               <option value="right">Right →</option>
               <option value="left">Left ←</option>
               <option value="down">Front ↓</option>
               <option value="up">Back ↑</option>
             </select></label
           ><label
+            >Turn around <output id="rotation-angle">90°</output><input id="rotation" type="range" min="-180" max="180" step="1" value="90" /></label><label
             >Camera elevation <output id="angle">27.1°</output
             ><input
               id="elevation"
