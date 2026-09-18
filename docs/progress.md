@@ -14,3 +14,5 @@
 - Product Hunt draft saved: https://www.producthunt.com/products/training-grounds?launch=training-grounds. Required checklist100% complete; not scheduled. Thumbnail, three gallery images, free pricing, maker, source link and Codex shoutout included. Optional video omitted.
 - Scheduling preview confirms September18 at12:01am PT /3:01pm Taiwan and a separate “Yes, join the GPT-6 Astra Challenge” radio option. Final confirmation is left for the user, as agreed.
 - Added favicon/social image and friendly load-failure message. Final build and deployment verification next.
+- Production checks covered left/right/front/back presets and source-duration switching. Fixed visible prompt refresh and hid stale sheet previews when settings change.
+- Core product delivered; GLB import included. Product Hunt final scheduling is the remaining user review step. No video hosting account was used.

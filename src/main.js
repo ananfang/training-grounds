@@ -375,6 +375,9 @@ function configure() {
       : 1.333333373;
   time = 0;
   document.querySelector("#angle").textContent = elevation + "°";
+  if (!document.querySelector("#prompt").hidden) document.querySelector("#prompt").value = prompt();
+  document.querySelector("#sheet-result").hidden = true;
+  document.querySelector("#notice").textContent = "";
 }
 document.querySelector("#direction").onchange = () => {
   document.querySelector("#elevation").value = ["up", "down"].includes(
