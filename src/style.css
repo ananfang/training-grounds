@@ -431,3 +431,13 @@ input[type="file"] {
 .file-label input[type="file"] { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; cursor: pointer; margin: 0; }
 #import-status:empty { display: none; }
 .import-panel #builtin { width: 100%; font-size: 11px; }
+
+.workspace > .import-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; margin: 0; padding: 24px 28px; border-radius: 0; border-inline: 0; border-bottom: 0; }
+.import-description { max-width: 440px; }
+.import-description h3 { font-size: 20px; }
+.import-description .hint { font-size: 14px; line-height: 1.65; }
+.import-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 12px; align-items: center; }
+.import-actions .file-label { margin: 0; }
+.import-actions > .hint, .import-actions #clip-label { grid-column: 1 / -1; }
+.import-actions #builtin { min-height: 44px; }
+@media (max-width: 600px) { .workspace > .import-panel { grid-template-columns: 1fr; gap: 14px; padding: 22px 20px; } }
