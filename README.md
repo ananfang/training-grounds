@@ -29,7 +29,7 @@ npm run dev
 
 1. Pick a motion and direction. Preview it before exporting.
 2. Download the sheet and timing JSON.
-3. Attach the sheet as image 1 and your original character still as image 2. Paste the copied prompt into your image generator.
+3. Attach the motion guide and your original character still, in either order. Paste the copied prompt into your image generator.
 4. Slice the returned sheet into eight cells and play at the exported timing. Check the actual output layout first; image generators do not always follow it.
 
 The guide establishes movement. The original still establishes appearance. Avoid feeding a previous generated animation back as the character reference.
